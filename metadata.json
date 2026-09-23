@@ -1,0 +1,6 @@
+{
+  "name": "StockMaster Pro - Sistema de Gestión de Inventario",
+  "description": "Sistema integral de control de inventario, kardex de movimientos de almacén, control de stock mínimo, gestión de proveedores y reporte de auditoría.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
