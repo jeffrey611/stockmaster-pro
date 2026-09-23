@@ -16,7 +16,6 @@ import { ProductModal } from './components/ProductModal';
 import { MovementModal } from './components/MovementModal';
 import { BarcodeScannerModal } from './components/BarcodeScannerModal';
 import { BarcodePrintModal } from './components/BarcodePrintModal';
-import { PortfolioGuideModal } from './components/PortfolioGuideModal';
 import { LoginModal } from './components/LoginModal';
 import { LoginPage } from './components/LoginPage';
 import {
@@ -64,7 +63,6 @@ function InventoryApp() {
   const [printModalOpen, setPrintModalOpen] = useState(false);
   const [printProduct, setPrintProduct] = useState<Product | null>(null);
 
-  const [portfolioGuideOpen, setPortfolioGuideOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
 
   // Toast notification
@@ -226,7 +224,6 @@ function InventoryApp() {
           setMovementSelectedProduct(null);
           setMovementModalOpen(true);
         }}
-        onOpenPortfolioGuide={() => setPortfolioGuideOpen(true)}
         onOpenAuthModal={() => setAuthModalOpen(true)}
         onResetData={handleResetData}
       />
@@ -323,18 +320,11 @@ function InventoryApp() {
       {/* Footer */}
       <footer className="mt-auto border-t border-slate-900 bg-slate-950 py-4 px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-400 no-print">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p>© {new Date().getFullYear()} StockMaster Pro · Sistema de Gestión de Inventario para Portafolio</p>
+          <p>© {new Date().getFullYear()} StockMaster Pro · Sistema Integral de Gestión de Inventario & Almacenes</p>
           <div className="flex items-center gap-4">
             <button
-              onClick={() => setPortfolioGuideOpen(true)}
-              className="text-indigo-400 hover:text-indigo-300 font-medium"
-            >
-              Documentación GitHub / README
-            </button>
-            <span>·</span>
-            <button
               onClick={handleResetData}
-              className="text-slate-400 hover:text-white"
+              className="text-slate-400 hover:text-white transition-colors"
             >
               Restaurar Datos Iniciales
             </button>
@@ -380,12 +370,6 @@ function InventoryApp() {
         isOpen={printModalOpen}
         onClose={() => setPrintModalOpen(false)}
         product={printProduct}
-      />
-
-      <PortfolioGuideModal
-        isOpen={portfolioGuideOpen}
-        onClose={() => setPortfolioGuideOpen(false)}
-        onResetData={handleResetData}
       />
 
       <LoginModal

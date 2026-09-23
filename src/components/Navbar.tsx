@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Boxes,
   Barcode,
-  FolderGit2,
   LogOut,
   UserCheck,
   ChevronDown,
@@ -22,7 +21,6 @@ interface NavbarProps {
   onOpenScanner: () => void;
   onOpenNewProduct: () => void;
   onOpenNewMovement: (type?: 'entrada' | 'salida') => void;
-  onOpenPortfolioGuide: () => void;
   onOpenAuthModal: () => void;
   onResetData: () => void;
 }
@@ -33,7 +31,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenScanner,
   onOpenNewProduct,
   onOpenNewMovement,
-  onOpenPortfolioGuide,
   onOpenAuthModal,
   onResetData,
 }) => {
@@ -130,16 +127,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span>Salida</span>
               </button>
             </div>
-
-            {/* Portfolio & GitHub Guide */}
-            <button
-              onClick={onOpenPortfolioGuide}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold text-blue-300 bg-blue-950/60 hover:bg-blue-900/60 border border-blue-600/40 rounded-md transition-colors shadow-sm"
-              title="Ver mi portafolio web personal, habilidades y documentación"
-            >
-              <FolderGit2 className="w-3.5 h-3.5 text-blue-400" />
-              <span className="hidden sm:inline">Mi Portafolio</span>
-            </button>
 
             {/* User profile / Quick Role Switcher */}
             {currentUser ? (
