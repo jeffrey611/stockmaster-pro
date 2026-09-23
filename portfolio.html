@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeffrey Amancio — Fullstack & Frontend Software Engineer</title>
+  <meta name="description" content="Portafolio profesional de Jeffrey Amancio. Ingeniero de Software Fullstack y Frontend especializado en React, TypeScript, arquitecturas escalables y diseño de interfaces de alto rendimiento." />
+  <meta property="og:title" content="Jeffrey Amancio — Portfolio de Desarrollo de Software" />
+  <meta property="og:description" content="Especialista en React 19, TypeScript, Tailwind CSS, arquitecturas enterprise y diseño de interfaces." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts: Syne (Display) & Plus Jakarta Sans (Prose) & JetBrains Mono (Code/Numbers) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN for instant standalone rendering -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            canvas: '#090d16',
+            surface: '#0f172a',
+            surfaceCard: '#131d33',
+            borderSubtle: 'rgba(255, 255, 255, 0.08)',
+            accentBlue: '#3b82f6',
+            accentCyan: '#06b6d4',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #090d16;
+      color: #f1f5f9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    .display-title {
+      font-family: 'Syne', sans-serif;
+    }
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
+    /* Subtle dot grid pattern */
+    .bg-grid-subtle {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(59, 130, 246, 0.35);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-blue-600 selection:text-white">
+
+  <!-- ================= TOP BAR (Strict 3-Zone Contract) ================= -->
+  <header class="sticky top-0 z-50 glass-card border-b border-white/10 px-6 py-4 transition-all">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <!-- Zone 1: Wordmark / Brand -->
+      <a href="#hero" class="text-xl font-bold tracking-tight text-white display-title flex items-center gap-2 hover:text-blue-400 transition-colors">
+        <span>Jeffrey Amancio</span>
+      </a>
+
+      <!-- Zone 2: Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre Mí</a>
+        <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a>
+        <a href="#habilidades" class="hover:text-white transition-colors">Habilidades</a>
+        <a href="#experiencia" class="hover:text-white transition-colors">Trayectoria</a>
+        <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Zone 3: Primary Action Button -->
+      <div class="flex items-center gap-3">
+        <a href="#contacto" class="px-4 py-2 text-xs font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-500 transition-colors whitespace-nowrap shadow-lg shadow-blue-600/20">
+          Iniciar Conversación
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION (Split-Screen Impact) ================= -->
+  <section id="hero" class="relative pt-16 pb-20 md:pt-24 md:pb-28 px-6 bg-grid-subtle border-b border-white/5">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column (Text & Value Proposition) -->
+      <div class="lg:col-span-7 space-y-6">
+        <!-- Status kicker without pill box -->
+        <div class="flex items-center gap-2 text-xs font-mono text-emerald-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Disponible para nuevas oportunidades · Full-Time o Contrato</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] display-title">
+          Construyendo software robusto, interfaces intuitivas y arquitecturas escalables.
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
+          Hola, soy <strong>Jeffrey Amancio</strong>, desarrollador de software enfocado en crear aplicaciones web modernas, sistemas enterprise de alta concurrencia y experiencias digitales de alto impacto con <strong>React, TypeScript y Node.js</strong>.
+        </p>
+
+        <!-- CTA row -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="#proyectos" class="px-5 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-xl transition-all shadow-lg shadow-blue-600/25 flex items-center gap-2">
+            <span>Explorar Proyectos Destacados</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+          </a>
+          <a href="https://github.com/jeffrey611" target="_blank" rel="noopener noreferrer" class="px-5 py-3 text-sm font-semibold text-slate-300 hover:text-white glass-card rounded-xl transition-all flex items-center gap-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+            <span>GitHub: @jeffrey611</span>
+          </a>
+        </div>
+
+        <!-- Metric Proof Row -->
+        <div class="grid grid-cols-3 gap-6 pt-6 border-t border-white/10 text-xs">
+          <div>
+            <div class="text-2xl font-bold text-white tabular font-mono">100%</div>
+            <div class="text-slate-400 mt-0.5">Tipado estricto TS</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-white tabular font-mono">Enterprise</div>
+            <div class="text-slate-400 mt-0.5">Arquitectura modular</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-white tabular font-mono">&lt;200ms</div>
+            <div class="text-slate-400 mt-0.5">Rendimiento UI</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Visual Portrait & Profile Bento -->
+      <div class="lg:col-span-5">
+        <div class="relative mx-auto max-w-sm rounded-2xl p-1 bg-gradient-to-b from-blue-500/20 via-transparent to-white/5 border border-white/10">
+          <div class="rounded-xl overflow-hidden bg-slate-900 shadow-2xl">
+            <img 
+              src="./images/jeffrey_avatar_portrait_1790189340259.jpg" 
+              alt="Foto de perfil de Jeffrey Amancio"
+              class="w-full h-80 object-cover object-center transition-transform hover:scale-105 duration-500"
+              onerror="this.onerror=null; this.src='https://avatars.githubusercontent.com/u/63210965?v=4';"
+            />
+            <div class="p-5 space-y-3 bg-slate-900/90 border-t border-white/5">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-bold text-white">Jeffrey Amancio</h3>
+                  <p class="text-xs text-slate-400 font-mono">Fullstack & Frontend Engineer</p>
+                </div>
+                <span class="inline-flex items-center gap-1.5 text-xs text-blue-400 font-medium font-mono">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                  Activo
+                </span>
+              </div>
+              <div class="text-xs text-slate-300 border-t border-white/5 pt-3 flex flex-wrap gap-x-3 gap-y-1">
+                <span>Especialidad: <strong>React & TypeScript</strong></span>
+                <span>·</span>
+                <span>Ubicación: <strong>Remoto / Híbrido</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ME (Sobre Mí) ================= -->
+  <section id="sobre-mi" class="py-20 px-6 border-b border-white/5">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="max-w-2xl">
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-blue-400">01. Filosofía & Perfil</span>
+        <h2 class="text-3xl font-bold text-white tracking-tight mt-2 display-title">
+          Diseño centrado en el usuario con rigor de ingeniería de software.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-mono font-bold">
+            01
+          </div>
+          <h3 class="text-base font-semibold text-white">Código Limpio & Tipado Fuerte</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Priorizo TypeScript en modo estricto, arquitecturas desacopladas, hooks reutilizables y manejo de estado determinista que reducen bugs en producción a cero.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 font-mono font-bold">
+            02
+          </div>
+          <h3 class="text-base font-semibold text-white">Rendimiento & Usabilidad</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Diseño interfaces fluidas optimizadas con memoización, cargas asíncronas y retroalimentación táctil inmediata (<200ms) sin desbordamientos de layout.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 font-mono font-bold">
+            03
+          </div>
+          <h3 class="text-base font-semibold text-white">Orientado al Negocio</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Cada línea de código soluciona un problema real: auditoría contable, reducción de mermas, optimización de flujos de inventario y conversión de usuarios.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED PROJECTS ================= -->
+  <section id="proyectos" class="py-20 px-6 border-b border-white/5 bg-slate-950/40">
+    <div class="max-w-6xl mx-auto space-y-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-mono font-semibold uppercase tracking-wider text-blue-400">02. Trabajo Seleccionado</span>
+          <h2 class="text-3xl font-bold text-white tracking-tight mt-2 display-title">
+            Proyectos Destacados en Producción
+          </h2>
+        </div>
+        <p class="text-xs text-slate-400 max-w-md">
+          Proyectos reales con código abierto en GitHub, demostraciones interactivas y arquitectura documentada.
+        </p>
+      </div>
+
+      <!-- MAIN FEATURED PROJECT CARD: STOCKMASTER PRO -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-blue-500/40 transition-all shadow-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+          
+          <!-- Image Showcase -->
+          <div class="lg:col-span-7 bg-slate-950 p-4 sm:p-6 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/10">
+            <div class="rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group">
+              <img 
+                src="./images/project_stockmaster_preview_1790189351357.jpg" 
+                alt="StockMaster Pro Dashboard" 
+                class="w-full h-auto object-cover transform group-hover:scale-102 transition-transform duration-500"
+                onerror="this.onerror=null; this.src='./images/warehouse_logistics_banner_1790187377900.jpg';"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-4">
+                <span class="text-[11px] font-mono text-slate-300">
+                  Dashboard de Análisis en Tiempo Real · Control de Almacenes
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Details -->
+          <div class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <!-- Unboxed metadata -->
+              <div class="text-xs font-mono text-slate-400 flex items-center gap-2">
+                <span>Enterprise SaaS</span>
+                <span>·</span>
+                <span>React 19 & TypeScript</span>
+                <span>·</span>
+                <span class="text-emerald-400">Producción</span>
+              </div>
+
+              <h3 class="text-2xl font-bold text-white display-title leading-snug">
+                StockMaster Pro — Sistema Integral de Inventarios, Kardex & Analítica
+              </h3>
+
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Plataforma web integral para control logístico de almacenes. Incorpora Kardex contable por Precio Medio Ponderado (PMP), escáner óptico de código de barras con cámara en tiempo real, alertas visuales automáticas de stock crítico y visualización analítica con Recharts.
+              </p>
+
+              <!-- Highlights list -->
+              <div class="space-y-2 pt-2 border-t border-white/5 text-xs text-slate-300">
+                <div class="flex items-start gap-2">
+                  <span class="text-blue-400 font-mono font-bold">✓</span>
+                  <span><strong>Kardex Automático:</strong> Registro inmutable de entradas, salidas y valuación.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-blue-400 font-mono font-bold">✓</span>
+                  <span><strong>Escáner Óptico & Generador Barcode:</strong> Soporte EAN-13 / Code 128 con cámara y plantilla de impresión.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-blue-400 font-mono font-bold">✓</span>
+                  <span><strong>Control de Roles (RBAC):</strong> Administrador, Almacenero y Auditor.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech stack & buttons -->
+            <div class="space-y-4 pt-4 border-t border-white/10">
+              <div class="text-xs font-mono text-slate-400">
+                <span class="text-slate-300 font-semibold">Stack:</span> React 19 · TypeScript · Tailwind CSS · Recharts · Lucide
+              </div>
+
+              <div class="flex flex-wrap items-center gap-3">
+                <a 
+                  href="https://github.com/jeffrey611/stockmaster-pro" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="flex-1 py-2.5 px-4 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-colors flex items-center justify-center gap-2"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+                  <span>Ver Código en GitHub</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SKILLS MATRIX ================= -->
+  <section id="habilidades" class="py-20 px-6 border-b border-white/5">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="max-w-2xl">
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-blue-400">03. Dominio Técnico</span>
+        <h2 class="text-3xl font-bold text-white tracking-tight mt-2 display-title">
+          Habilidades & Tecnologías Principales
+        </h2>
+        <p class="text-xs text-slate-400 mt-2">
+          Herramientas y lenguajes que utilizo a diario para construir productos digitales de alta fidelidad.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Frontend -->
+        <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="text-xs font-mono text-blue-400 uppercase tracking-wider font-bold">Frontend Core</div>
+          <h3 class="text-lg font-bold text-white">Interfaces & Web</h3>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>React 18 / 19</span>
+              <span class="font-mono text-slate-400">Avanzado</span>
+            </li>
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>TypeScript</span>
+              <span class="font-mono text-slate-400">Estricto</span>
+            </li>
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>JavaScript (ES6+)</span>
+              <span class="font-mono text-slate-400">Nativo</span>
+            </li>
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>HTML5 Semántico</span>
+              <span class="font-mono text-slate-400">A11y</span>
+            </li>
+            <li class="flex items-center justify-between py-1">
+              <span>Vite & Bundlers</span>
+              <span class="font-mono text-slate-400">Optimizado</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Styling & UI/UX -->
+        <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="text-xs font-mono text-cyan-400 uppercase tracking-wider font-bold">Diseño & Estilo</div>
+          <h3 class="text-lg font-bold text-white">UI/UX & Estilizado</h3>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>Tailwind CSS</span>
+              <span class="font-mono text-slate-400">Experto</span>
+            </li>
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>Diseño Responsive</span>
+              <span class="font-mono text-slate-400">Mobile-First</span>
+            </li>
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>Recharts Data Viz</span>
+              <span class="font-mono text-slate-400">Interactivo</span>
+            </li>
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>Lucide / SVG Icons</span>
+              <span class="font-mono text-slate-400">Limpio</span>
+            </li>
+            <li class="flex items-center justify-between py-1">
+              <span>Micro-animaciones CSS</span>
+              <span class="font-mono text-slate-400">&lt;200ms</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- State & Architecture -->
+        <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="text-xs font-mono text-indigo-400 uppercase tracking-wider font-bold">Arquitectura</div>
+          <h3 class="text-lg font-bold text-white">Lógica & Datos</h3>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>React Context & Hooks</span>
+              <span class="font-mono text-slate-400">Modular</span>
+            </li>
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>Kardex / PMP Logic</span>
+              <span class="font-mono text-slate-400">Financiero</span>
+            </li>
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>REST APIs & JSON</span>
+              <span class="font-mono text-slate-400">Integración</span>
+            </li>
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>Persistencia Local/Cloud</span>
+              <span class="font-mono text-slate-400">Storage</span>
+            </li>
+            <li class="flex items-center justify-between py-1">
+              <span>RBAC / Seguridad</span>
+              <span class="font-mono text-slate-400">Roles</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- DevOps & Tools -->
+        <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="text-xs font-mono text-emerald-400 uppercase tracking-wider font-bold">Herramientas</div>
+          <h3 class="text-lg font-bold text-white">DevOps & Flujo</h3>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>Git & GitHub</span>
+              <span class="font-mono text-slate-400">Flujo Git</span>
+            </li>
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>Node.js / npm</span>
+              <span class="font-mono text-slate-400">Gestor</span>
+            </li>
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>Vercel / Cloud Deploy</span>
+              <span class="font-mono text-slate-400">CI/CD</span>
+            </li>
+            <li class="flex items-center justify-between py-1 border-b border-white/5">
+              <span>Hardware API (Cámara)</span>
+              <span class="font-mono text-slate-400">WebRTC</span>
+            </li>
+            <li class="flex items-center justify-between py-1">
+              <span>Testing & Linter</span>
+              <span class="font-mono text-slate-400">ESLint / tsc</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE & METHODOLOGY ================= -->
+  <section id="experiencia" class="py-20 px-6 border-b border-white/5 bg-slate-950/40">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="max-w-2xl">
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-blue-400">04. Metodología de Trabajo</span>
+        <h2 class="text-3xl font-bold text-white tracking-tight mt-2 display-title">
+          Cómo convierto ideas en software funcional
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="p-5 rounded-xl border border-white/5 bg-slate-900/60 space-y-2">
+          <span class="text-xs font-mono text-blue-400 font-bold">Fase 1</span>
+          <h4 class="text-sm font-bold text-white">Análisis & Arquitectura</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Definición de entidades, modelo de datos, rutas críticas de usuario y diagramación de flujos lógicos.</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-white/5 bg-slate-900/60 space-y-2">
+          <span class="text-xs font-mono text-cyan-400 font-bold">Fase 2</span>
+          <h4 class="text-sm font-bold text-white">Desarrollo Frontend Estricto</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Construcción de componentes modulares en TypeScript, layout responsive con Tailwind CSS y control de estado.</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-white/5 bg-slate-900/60 space-y-2">
+          <span class="text-xs font-mono text-indigo-400 font-bold">Fase 3</span>
+          <h4 class="text-sm font-bold text-white">Optimización & Auditoría</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Verificación estricta de compilación (`tsc --noEmit`), reducción de renders innecesarios y soporte cross-browser.</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-white/5 bg-slate-900/60 space-y-2">
+          <span class="text-xs font-mono text-emerald-400 font-bold">Fase 4</span>
+          <h4 class="text-sm font-bold text-white">Despliegue & Mantenimiento</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Publicación continua en Vercel/GitHub, control de versiones semántico y documentación técnica clara.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT SECTION ================= -->
+  <section id="contacto" class="py-24 px-6 relative">
+    <div class="max-w-4xl mx-auto glass-card rounded-3xl p-8 sm:p-12 border border-white/10 text-center space-y-8 relative overflow-hidden">
+      
+      <div class="space-y-4 max-w-xl mx-auto">
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-blue-400">05. ¿Listo para colaborar?</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight display-title">
+          Hablemos sobre tu próximo proyecto o vacante técnica.
+        </h2>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Estoy disponible para unirme a equipos de alto rendimiento, proyectos freelance o posiciones de desarrollo frontend y fullstack.
+        </p>
+      </div>
+
+      <!-- Quick Contact Badges & Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        
+        <!-- Copy Email Button -->
+        <button 
+          id="copyEmailBtn"
+          onclick="copyToClipboard('jeffreyamancio34@gmail.com', 'copyEmailBtn', 'Email Copiado')"
+          class="w-full sm:w-auto px-6 py-3.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-xl transition-all shadow-lg shadow-blue-600/25 flex items-center justify-center gap-2"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          <span id="copyEmailText">Copiar: jeffreyamancio34@gmail.com</span>
+        </button>
+
+        <!-- Direct Email Link -->
+        <a 
+          href="mailto:jeffreyamancio34@gmail.com?subject=Oportunidad%20Laboral%20/%20Contacto%20Portafolio" 
+          class="w-full sm:w-auto px-6 py-3.5 text-xs font-semibold text-slate-200 hover:text-white glass-card rounded-xl transition-colors flex items-center justify-center gap-2"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+          <span>Enviar Correo Directo</span>
+        </a>
+
+        <!-- GitHub Profile -->
+        <a 
+          href="https://github.com/jeffrey611" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full sm:w-auto px-6 py-3.5 text-xs font-semibold text-slate-200 hover:text-white glass-card rounded-xl transition-colors flex items-center justify-center gap-2"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+          <span>Perfil GitHub</span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="mt-auto border-t border-white/5 py-8 px-6 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="display-title font-bold text-slate-400">
+        Jeffrey Amancio · Software Engineer
+      </div>
+      <div>
+        Diseñado & Desarrollado con React 19, TypeScript y Tailwind CSS.
+      </div>
+      <div>
+        © 2026 · Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Copy to Clipboard -->
+  <script>
+    function copyToClipboard(text, btnId, successMsg) {
+      navigator.clipboard.writeText(text).then(function() {
+        const textElem = document.getElementById('copyEmailText');
+        const originalText = textElem.innerText;
+        textElem.innerText = '✓ ¡Copiado al portapapeles!';
+        setTimeout(function() {
+          textElem.innerText = originalText;
+        }, 2500);
+      }).catch(function(err) {
+        console.error('Error al copiar:', err);
+      });
+    }
+  </script>
+</body>
+</html>

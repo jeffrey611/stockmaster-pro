@@ -1,5 +1,19 @@
 import React, { useState } from 'react';
-import { X, Copy, Check, FolderGit2, ShieldCheck, Database, Layers, Terminal, Sparkles } from 'lucide-react';
+import {
+  X,
+  Copy,
+  Check,
+  FolderGit2,
+  ShieldCheck,
+  Database,
+  Layers,
+  Terminal,
+  Sparkles,
+  ExternalLink,
+  Download,
+  Globe,
+  User,
+} from 'lucide-react';
 
 interface PortfolioGuideModalProps {
   isOpen: boolean;
@@ -8,9 +22,27 @@ interface PortfolioGuideModalProps {
 }
 
 export const PortfolioGuideModal: React.FC<PortfolioGuideModalProps> = ({ isOpen, onClose, onResetData }) => {
+  const [activeTab, setActiveTab] = useState<'portfolio' | 'readme'>('portfolio');
   const [copied, setCopied] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
 
   if (!isOpen) return null;
+
+  const handleDownloadPortfolioHtml = () => {
+    // Trigger download of portfolio.html
+    const link = document.createElement('a');
+    link.href = '/portfolio.html';
+    link.download = 'jeffrey-amancio-portfolio.html';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('jeffreyamancio34@gmail.com');
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
 
   const readmeContent = `# StockMaster Pro - Enterprise Inventory & Warehouse Management System
 
@@ -100,8 +132,8 @@ Abre [http://localhost:5173](http://localhost:5173) en tu navegador para ver la 
               <FolderGit2 className="w-4 h-4" />
             </div>
             <div>
-              <h2 className="text-base font-semibold text-white">Guía de Portafolio & GitHub</h2>
-              <p className="text-xs text-slate-400">Documentación técnica lista para presentar a reclutadores</p>
+              <h2 className="text-base font-semibold text-white">Mi Portafolio & GitHub</h2>
+              <p className="text-xs text-slate-400">Página de presentación personal y documentación de StockMaster Pro</p>
             </div>
           </div>
           <button
@@ -112,8 +144,152 @@ Abre [http://localhost:5173](http://localhost:5173) en tu navegador para ver la 
           </button>
         </div>
 
+        {/* Tab Selector */}
+        <div className="flex items-center gap-2 px-6 pt-3 border-b border-slate-800/80 bg-slate-950/40">
+          <button
+            type="button"
+            onClick={() => setActiveTab('portfolio')}
+            className={`pb-2.5 px-3 text-xs font-semibold flex items-center gap-2 border-b-2 transition-colors ${
+              activeTab === 'portfolio'
+                ? 'border-blue-500 text-white'
+                : 'border-transparent text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            <Globe className="w-3.5 h-3.5 text-blue-400" />
+            <span>Mi Portafolio Web (HTML)</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab('readme')}
+            className={`pb-2.5 px-3 text-xs font-semibold flex items-center gap-2 border-b-2 transition-colors ${
+              activeTab === 'readme'
+                ? 'border-indigo-500 text-white'
+                : 'border-transparent text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            <Terminal className="w-3.5 h-3.5 text-indigo-400" />
+            <span>Documentación GitHub (README.md)</span>
+          </button>
+        </div>
+
         {/* Content */}
         <div className="p-6 overflow-y-auto space-y-6">
+          {activeTab === 'portfolio' ? (
+            <div className="space-y-6">
+              {/* Personal Portfolio Hero Box */}
+              <div className="p-5 bg-gradient-to-br from-blue-950/40 via-slate-900 to-slate-950 border border-blue-500/30 rounded-xl space-y-4">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl overflow-hidden bg-slate-800 border border-blue-500/40 shrink-0">
+                      <img
+                        src="./images/jeffrey_avatar_portrait_1790189340259.jpg"
+                        alt="Jeffrey Amancio"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          (e.target as HTMLElement).style.display = 'none';
+                        }}
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-bold text-white flex items-center gap-2">
+                        <span>Jeffrey Amancio</span>
+                        <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/40">
+                          Fullstack & Frontend
+                        </span>
+                      </h3>
+                      <p className="text-xs text-slate-400">
+                        Especialista en React 19, TypeScript, Arquitecturas Enterprise y UI/UX
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap items-center gap-2">
+                    <a
+                      href="/portfolio.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3.5 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-colors flex items-center gap-1.5 shadow-sm"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      <span>Abrir Portafolio Web</span>
+                    </a>
+                    <button
+                      type="button"
+                      onClick={handleDownloadPortfolioHtml}
+                      className="px-3 py-2 text-xs font-semibold text-slate-200 hover:text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg transition-colors flex items-center gap-1.5"
+                    >
+                      <Download className="w-3.5 h-3.5 text-blue-400" />
+                      <span>Descargar .html</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-white/5 text-xs text-slate-300 leading-relaxed">
+                  He creado tu archivo <strong>portfolio.html</strong> independiente, con diseño moderno, tipografías elegantes (Syne & Plus Jakarta Sans), tus habilidades técnicas, tarjeta de proyecto de StockMaster Pro con métricas y enlaces directos a tu GitHub.
+                </div>
+              </div>
+
+              {/* Quick Profile Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-4 bg-slate-950 border border-slate-800 rounded-xl space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-semibold text-white">Repositorio Oficial en GitHub</span>
+                    <a
+                      href="https://github.com/jeffrey611/stockmaster-pro"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-indigo-400 hover:text-indigo-300 flex items-center gap-1"
+                    >
+                      <span>Abrir</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                  <p className="text-xs font-mono text-slate-400 break-all">
+                    github.com/jeffrey611/stockmaster-pro
+                  </p>
+                </div>
+
+                <div className="p-4 bg-slate-950 border border-slate-800 rounded-xl space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-semibold text-white">Correo de Contacto Profesional</span>
+                    <button
+                      type="button"
+                      onClick={handleCopyEmail}
+                      className="text-xs text-blue-400 hover:text-blue-300 flex items-center gap-1"
+                    >
+                      {copiedEmail ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                      <span>{copiedEmail ? 'Copiado' : 'Copiar'}</span>
+                    </button>
+                  </div>
+                  <p className="text-xs font-mono text-slate-400 break-all">
+                    jeffreyamancio34@gmail.com
+                  </p>
+                </div>
+              </div>
+
+              {/* What is included in your portfolio */}
+              <div className="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl space-y-3">
+                <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                  ¿Cómo puedes usar tu archivo portfolio.html?
+                </h4>
+                <ul className="text-xs text-slate-300 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">1.</span>
+                    <span><strong>Subirlo a GitHub Pages:</strong> Puedes crear un repositorio llamado <code>jeffrey611.github.io</code> y subir este archivo como <code>index.html</code> para tener tu propio dominio gratuito.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">2.</span>
+                    <span><strong>Compartirlo por correo o WhatsApp:</strong> Al hacer clic en <em>Descargar .html</em>, obtienes el archivo único que funciona sin necesidad de servidores externos ni dependencias.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 font-bold">3.</span>
+                    <span><strong>Adjuntarlo en postulaciones:</strong> Puedes incluir el enlace a tu GitHub y tu demo interactiva en cualquier plataforma de reclutamiento (LinkedIn, Upwork, Indeed).</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          ) : (
+            <div className="space-y-6">
           {/* Hero Banner Box */}
           <div className="p-4 bg-indigo-950/30 border border-indigo-500/30 rounded-xl flex items-start gap-4">
             <Sparkles className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
@@ -181,6 +357,8 @@ Abre [http://localhost:5173](http://localhost:5173) en tu navegador para ver la 
               </pre>
             </div>
           </div>
+        </div>
+      )}
 
           {/* Reset Demo Data for testing */}
           <div className="pt-2 border-t border-slate-800 flex items-center justify-between">

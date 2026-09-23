@@ -131,14 +131,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
             </div>
 
-            {/* Portfolio GitHub README guide */}
+            {/* Portfolio & GitHub Guide */}
             <button
               onClick={onOpenPortfolioGuide}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-indigo-300 bg-indigo-950/50 hover:bg-indigo-900/60 border border-indigo-700/40 rounded-md transition-colors"
-              title="Ver especificaciones técnicas para GitHub / Portafolio"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold text-blue-300 bg-blue-950/60 hover:bg-blue-900/60 border border-blue-600/40 rounded-md transition-colors shadow-sm"
+              title="Ver mi portafolio web personal, habilidades y documentación"
             >
-              <FolderGit2 className="w-3.5 h-3.5 text-indigo-400" />
-              <span className="hidden sm:inline">Docs Portafolio</span>
+              <FolderGit2 className="w-3.5 h-3.5 text-blue-400" />
+              <span className="hidden sm:inline">Mi Portafolio</span>
             </button>
 
             {/* User profile / Quick Role Switcher */}
